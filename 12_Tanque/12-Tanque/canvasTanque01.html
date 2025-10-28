@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>CANVAS Tanque</title>
+<style>
+body{
+	width:960px;
+	margin:0 auto;
+}
+h1{
+	text-align:center;
+}
+#miCanvas{
+	border:dotted 2px yellow;
+	background:green;	
+}
+</style>
+<script>
+/***************
+VARIABLES
+****************/
+var canvas, ctx;
+var x, y;
+var imagen;
+var radianes;
+var BARRA = 32;
+var teclaPulsada = null;
+var tecla_array = new Array();
+var balas_array = new Array();
+var enemigos_array = new Array();
+var colorEnemigo = ["red", "blue", "black", 
+"white", "yellow", "pink", "purple"];
+var colorBala = "red";
+var centroX, centroY;
+var w,h;
+var puntos = 0;
+var vidas = 3;
+var finJuego = false;
+/**************
+OBJETOS
+**************/
+function Bala(x,y,radianes){
+	
+}
+function Tanque(x,y,radio){
+	
+}
+function Enemigo(x,y){
+	
+}
+/****************
+FUNCIONES
+****************/
+function anima(){
+	requestAnimationFrame(anima);
+	verifica();
+	pinta();
+}
+function verifica(){
+	
+}
+function pinta(){
+	ctx.clearRect(0,0,canvas.width, canvas.height);	
+}
+/****************
+LISTENES
+****************/
+window.requestAnimationFrame=(function(){
+	return window.requestAnimationFrame ||
+			window.webkitRequestAnimationFrame ||
+			window.mozRequestAnimationFrame ||
+			function(callback){window.setTimeout(callback,17);}
+})();
+/****************
+INICIO
+****************/
+window.onload = function(){
+	canvas = document.getElementById("miCanvas");
+	if(canvas && canvas.getContext){
+		ctx = canvas.getContext("2d");
+		if(ctx){
+			 anima();
+		} else {
+			alert("Error al crear tu contexto");	
+		}
+	}
+}
+</script>
+</head>
+
+<body>
+<h1>Tanque</h1>
+<canvas id="miCanvas" width="960px" height="500px">
+Tu navegador no soporta CANVAS
+</canvas>
+</body>
+</html>
